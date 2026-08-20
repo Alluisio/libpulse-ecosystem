@@ -1,0 +1,3 @@
+[submodule "libpulse-backend"]
+	path = libpulse-backend
+	url = https://github.com/Alluisio/libpulse-backend.git
