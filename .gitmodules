@@ -4,3 +4,6 @@
 [submodule "libpulse-ui"]
 	path = libpulse-ui
 	url = https://github.com/Alluisio/libpulse-ui.git
+[submodule "libpulse-mobile"]
+	path = libpulse-mobile
+	url = https://github.com/Alluisio/libpulse-mobile.git
