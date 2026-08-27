@@ -76,9 +76,21 @@ docker compose down
 
 ---
 
-## 🛠️ Tecnologias Principais
+## 🚀 Infraestrutura de Produção (v1.0.0)
 
-* **Backend:** Node.js, NestJS v11, TypeORM, PostgreSQL 16, Nodemailer, Swagger.
+O LibPulse atingiu a versão de lançamento **1.0.0** e está configurado para operar em um ecossistema nativo de nuvem com as seguintes integrações reais de DevOps:
+
+* **Backend:** Hospedado no **Render**, configurado com HTTPS, JWT (Cookies HttpOnly) e CORS rígido (aceitando tráfego apenas do frontend oficial).
+* **Banco de Dados (Produção):** Migrado do PostgreSQL em Docker para o **Neon Tech** (Serverless Postgres).
+* **Frontend Web:** Implantado e distribuído globalmente através da **Netlify** (https://libpulse.netlify.app).
+* **Mobile (iOS & Android):** App empacotado, assinado (Keystore JKS / SHA-1) e construído no Expo Application Services (**EAS Build**) no perfil `production`.
+* **Push Notifications:** Integrado nativamente ao **Firebase Cloud Messaging (FCM)** via `google-services.json` para entregas de alerta no Android.
+
+---
+
+## 🛠 Tecnologias Principais
+
+* **Backend:** Node.js, NestJS v11, TypeORM, PostgreSQL 16 (Neon), Swagger.
 * **Frontend Web:** React 19, Vite, TypeScript, PrimeReact, PrimeFlex, TanStack Query v5.
 * **Mobile:** Expo SDK 57, React Native, React Navigation, TanStack Query v5, Expo Notifications.
-* **DevOps:** Docker, Docker Compose, Git Submodules.
+* **DevOps / Cloud:** Docker, Render, Netlify, EAS (Expo Application Services), Google Cloud Platform / Firebase.

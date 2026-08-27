@@ -2,7 +2,8 @@ version: '3.8'
 
 services:
   # ==========================================
-  # Banco de Dados Relacional (PostgreSQL)
+  # Banco de Dados de Desenvolvimento Local
+  # (Use apenas para dev. Produção usa Neon)
   # ==========================================
   postgres:
     image: postgres:16-alpine
@@ -21,44 +22,6 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
-
-  # ==========================================
-  # LibPulse Backend (NestJS + TypeORM)
-  # ==========================================
-  # backend:
-  #   build:
-  #     context: ./libpulse-backend
-  #     dockerfile: Dockerfile
-  #   container_name: libpulse-backend
-  #   restart: unless-stopped
-  #   ports:
-  #     - "3000:3000"
-  #   environment:
-  #     PORT: 3000
-  #     DATABASE_URL: postgres://postgres:postgres@postgres:5432/libpulse
-  #     STEAM_API_KEY: ${STEAM_API_KEY:-}
-  #     SMTP_HOST: ${SMTP_HOST:-sandbox.smtp.mailtrap.io}
-  #     SMTP_PORT: ${SMTP_PORT:-2525}
-  #     SMTP_USER: ${SMTP_USER:-}
-  #     SMTP_PASS: ${SMTP_PASS:-}
-  #     SMTP_FROM: ${SMTP_FROM:-LibPulse <noreply@libpulse.local>}
-  #   depends_on:
-  #     postgres:
-  #       condition: service_healthy
-
-  # ==========================================
-  # LibPulse Web (React + Vite SPA)
-  # ==========================================
-  # web:
-  #   build:
-  #     context: ./libpulse-ui
-  #     dockerfile: Dockerfile
-  #   container_name: libpulse-ui
-  #   restart: unless-stopped
-  #   ports:
-  #     - "5173:5173"
-  #   depends_on:
-  #     - backend
 
 volumes:
   postgres_data:
